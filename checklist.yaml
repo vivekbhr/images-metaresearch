@@ -1,0 +1,211 @@
+reviewer:
+    title: Enter DOI of the evaluated article
+    id: DOI
+    type: text
+    mandatory: true
+    bold: true
+doi:
+    title: Enter reviewer ID
+    id: Reviewer
+    type: text
+    mandatory: true
+    bold: true
+
+question1:
+    title: Does the article have Photographs
+    id: photographs
+    mandatory: false
+    bold: false
+question2:
+    title: Does the article have Microphotographs
+    id: microphotographs
+    mandatory: false
+    bold: false
+question3:
+    title: Does the article have Electron micrographs
+    id: electron.micrographs
+    mandatory: false
+    bold: false
+question4:
+    title: Does the article have Images from clinical imaging techniques
+    id: clinical.images
+    mandatory: false
+    bold: false
+question5:
+    title: Does the article have any other type of images
+    id: other.images
+    mandatory: false
+    bold: false
+
+question6:
+    title: Do images contain scale information?
+    id: scale.info
+    type: selectinput
+    bold: true
+    multipleAllowed: false
+    choices:
+        - Scale bar with dimension in all images
+        - Scale bar with dimension in some images; no scale or insufficient scale information in other images
+        - Scale bar without dimension in all images
+        - Scale bar without dimension in some images; no scale in other images
+        - No scale bars, magnification or scale information
+          in the figure legend (as in 100x magnified) for all images
+        - No scale bars, magnification or scale information in the
+          figure legend (as in 100x magnified) for some images
+        - No scale bars or magnification information in any images
+
+question7:
+    title: Are images annotated? - Species/object/tissue (can appear anywhere in the paper, title, end of  introduction)
+    id: annotation.text
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - The species (and tissue, if appropriate) or object is reported for all images
+        - The species (and tissue, if appropriate) or object is reported or partially reported for some images
+        - The species (and tissue, if appropriate) or object is not reported for any image
+
+question8:
+    title: >
+           Are images annotated? - Arrows & labels (= lines, arrowheards, letter
+           keys = letters of the albabeth used to labe structures, star symbosl,...)are explained
+    id: annotation.labels
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Arrows and/or labels are explained for all images
+        - Arrows and/or labels are explained for some images, missing for others
+        - Arrows and/or labels are not explained for any images
+        - No image includes arrows or labels that require explanation
+
+question9:
+    title: Overall size - Are the images large enough that key features are visible?
+    id: features.visible
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Size suitable for all images
+        - Size suitable for some images, too small for others
+        - All images are too small
+
+question10:
+    title: Magnification - Is the magnification of the image suitable to convey the message?
+    id: magnification.appropriate
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Magnification is suitable for all images
+        - Magnification is suitable for some images, but not others
+        - Magnification is not suitable for any images
+        - Magnification is not relevant for any images
+
+question11:
+    title: >
+            Orientation - Are axes, up/down, inside/outside, external/inner mass, anterior/posterior,
+            dorsal/ventral, proximal/distal, if important, labelled on the figure or described in
+            the figure legend? Labels are not required if the orientation is obvious to a non-specialist
+            (i.e. a person with feet down and head up, a plant with roots down and leaves up).
+    id: Orientation.appropriate
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Orientation is clear to a non-specialist, or labels are suitable for all images
+        - Orientation is clear to a non-specialist or labels are suitable for some images, but not suitable or missing for others
+        - Orientation is unclear or labels are not suitable for any images or missing from all images
+        - Orientation labels are not relevant for any images
+
+question12:
+    title: Does the paper include color figures?
+    id: Color.images
+    mandatory: false
+    bold: false
+
+question13:
+    title: Are the colors color-blind safe?
+    id: Colorblind.safe
+    type: selectinput
+    bold: true
+    multipleAllowed: false
+    choices:
+        - All images are color-blind safe
+        - Some images are color-blind safe; others are not
+        - No images are color-blind safe
+
+question14:
+    title: Colors are explained either inside/adjacent to the image or in the figure legend.
+    id: Colors.explained
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Colors explained for all images
+        - Colors explained for some images, not explained for others
+        - Colors not explained for any images
+        - Colors are not used to convey information in any images
+
+question15:
+    title: >
+           For images where color is used to display quantitative or location information,
+           are the colors superfluous? (when for example only ONE aspect/protein distribution
+           or similar is shown in color (green, red) on a black background).
+    id: Colors.superfluous
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Colors are not superfluous for any images
+        - Colors are superfluous for some images; meaningful for others
+        - Colors are superfluous for all images
+        - Color is not used to display quantitative or location information for any images
+
+question16:
+    title: >
+        Are the minimum criteria for the microscopy and/or electron microscopy set-up
+        defined below explained in the method section? Note that additional information
+        such as software setting should be reported - this will be addressed in the paper,
+        however will not be assessed this in this question.
+    id: Setup.described
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - explained for all images
+        - explained for some images
+        - not explained for any images
+        - No microscopy or electron microscopy images
+
+question17:
+    title: >
+        Does the paper include any images that were processed by methods other than cropping
+        (i.e. processing using suites such as ImageJ, FIJI, Matlab with standard plug-ins)?
+        We will use this question to flag papers with more complex image processing methods -
+        if there are enough papers, image experts on our team will evaluate the description of
+        the processing methods, pipelines, etc.
+    id: Software.processing
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Image processing was performed on some or all images
+        - No image processing was performed
+
+question18:
+    title: Does the paper include data based on image analysis?
+    id: Image.analysis
+    mandatory: false
+    bold: false
+
+question19:
+    title: Do authors address the availability of any images that were used to generate data?
+    id: Raw.images
+    type: selectinput
+    bold: false
+    multipleAllowed: false
+    choices:
+        - Raw images for some or all figures are deposited in a database or repository
+        - Authors state that raw images for some or all data are available upon request
+        - Authors do not address the availability of any images
