@@ -5,45 +5,88 @@ reviewer:
     mandatory: true
     bold: true
 doi:
-    title: Enter reviewer ID
+    title: Select reviewer ID
     id: Reviewer
-    type: text
     mandatory: true
     bold: true
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Ahmet
+      - Erin
+      - Helena
+      - Luke
+      - Sarvenaz
+      - Steven
+      - Tracy
+      - Vinodh
 
 question1:
     title: Does the article have Photographs
     id: photographs
     mandatory: false
     bold: false
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question2:
     title: Does the article have Microphotographs
     id: microphotographs
     mandatory: false
     bold: false
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question3:
     title: Does the article have Electron micrographs
     id: electron.micrographs
     mandatory: false
     bold: false
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question4:
     title: Does the article have Images from clinical imaging techniques
     id: clinical.images
     mandatory: false
     bold: false
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question5:
     title: Does the article have any other type of images
     id: other.images
     mandatory: false
     bold: false
-
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question6:
     title: Do images contain scale information?
     id: scale.info
     type: selectinput
     bold: true
     multipleAllowed: false
+    hint: If many images of the same magnification are shown in one figure panel, 
+          they do not each need their own scale bar; one scale bar suffices for all. 
     choices:
+        - NA
         - Scale bar with dimension in all images
         - Scale bar with dimension in some images; no scale or insufficient scale information in other images
         - Scale bar without dimension in all images
@@ -61,6 +104,7 @@ question7:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - The species (and tissue, if appropriate) or object is reported for all images
         - The species (and tissue, if appropriate) or object is reported or partially reported for some images
         - The species (and tissue, if appropriate) or object is not reported for any image
@@ -74,6 +118,7 @@ question8:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - Arrows and/or labels are explained for all images
         - Arrows and/or labels are explained for some images, missing for others
         - Arrows and/or labels are not explained for any images
@@ -86,6 +131,7 @@ question9:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - Size suitable for all images
         - Size suitable for some images, too small for others
         - All images are too small
@@ -97,6 +143,7 @@ question10:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - Magnification is suitable for all images
         - Magnification is suitable for some images, but not others
         - Magnification is not suitable for any images
@@ -104,15 +151,19 @@ question10:
 
 question11:
     title: >
-            Orientation - Are axes, up/down, inside/outside, external/inner mass, anterior/posterior,
-            dorsal/ventral, proximal/distal, if important, labelled on the figure or described in
-            the figure legend? Labels are not required if the orientation is obvious to a non-specialist
-            (i.e. a person with feet down and head up, a plant with roots down and leaves up).
+            Orientatation: Is orientiation, if important, labelled on the figure or described in
+            the figure legend? 
     id: Orientation.appropriate
     type: selectinput
     bold: false
     multipleAllowed: false
+    hint: >
+          Example - axes, up/down, inside/outside, external/inner mass, anterior/posterior,
+          dorsal/ventral, proximal/distal etc..
+          Labels are not required if the orientation is obvious to a non-specialist
+          (i.e. a person with feet down and head up, a plant with roots down and leaves up).
     choices:
+        - NA
         - Orientation is clear to a non-specialist, or labels are suitable for all images
         - Orientation is clear to a non-specialist or labels are suitable for some images, but not suitable or missing for others
         - Orientation is unclear or labels are not suitable for any images or missing from all images
@@ -123,14 +174,27 @@ question12:
     id: Color.images
     mandatory: false
     bold: false
-
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question13:
     title: Are the colors color-blind safe?
     id: Colorblind.safe
     type: selectinput
     bold: true
     multipleAllowed: false
+    hint: >
+          Use Color Oracle (http://colororacle.org/) to answer this question. 
+          Color blind safe means that the features that are visible to a person with 
+          normal vision are also clearly visible for a color-blind person. Change the 
+          screen view to “deuteranopia” and determine whether key features are visible. 
+          (Note- the other forms of color-blindness are much more severe but also less 
+          common and render the person blind to ALL color.)
     choices:
+        - NA
         - All images are color-blind safe
         - Some images are color-blind safe; others are not
         - No images are color-blind safe
@@ -142,6 +206,7 @@ question14:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - Colors explained for all images
         - Colors explained for some images, not explained for others
         - Colors not explained for any images
@@ -150,13 +215,23 @@ question14:
 question15:
     title: >
            For images where color is used to display quantitative or location information,
-           are the colors superfluous? (when for example only ONE aspect/protein distribution
-           or similar is shown in color (green, red) on a black background).
+           are the colors superfluous?
     id: Colors.superfluous
     type: selectinput
     bold: false
     multipleAllowed: false
+    hint: >
+          when for example only ONE aspect/protein distribution
+          or similar is shown in color (green, red) on a black background.
+          Images where color is not used to display quantitative or location 
+          information might include a color image of a fish or plant that is 
+          included to show what the object looks like in nature. If color is not 
+          used to display quantitative or location information for any images in 
+          the paper, select option 4. Otherwise, consider only images where color 
+          is used to display quantitative or location information and choose option 
+          1, 2 or 3 as appropriate.
     choices:
+        - NA
         - Colors are not superfluous for any images
         - Colors are superfluous for some images; meaningful for others
         - Colors are superfluous for all images
@@ -164,32 +239,34 @@ question15:
 
 question16:
     title: >
-        Are the minimum criteria for the microscopy and/or electron microscopy set-up
-        defined below explained in the method section? Note that additional information
-        such as software setting should be reported - this will be addressed in the paper,
-        however will not be assessed this in this question.
+            Are the minimum criteria for the microscopy and/or electron microscopy set-up
+            defined below explained in the method section? 
     id: Setup.described
     type: selectinput
     bold: false
     multipleAllowed: false
+    hint: Note that additional information such as software setting should be reported, 
+          this will be addressed in the paper, however will not be assessed this in this question.
     choices:
+        - NA
         - explained for all images
         - explained for some images
         - not explained for any images
         - No microscopy or electron microscopy images
 
 question17:
-    title: >
-        Does the paper include any images that were processed by methods other than cropping
-        (i.e. processing using suites such as ImageJ, FIJI, Matlab with standard plug-ins)?
-        We will use this question to flag papers with more complex image processing methods -
-        if there are enough papers, image experts on our team will evaluate the description of
-        the processing methods, pipelines, etc.
+    title: Does the paper include any images that were processed by methods other than cropping
     id: Software.processing
     type: selectinput
     bold: false
     multipleAllowed: false
+    hint: >
+        (i.e. processing using suites such as ImageJ, FIJI, Matlab with standard plug-ins)?
+        We will use this question to flag papers with more complex image processing methods -
+        if there are enough papers, image experts on our team will evaluate the description of
+        the processing methods, pipelines, etc.
     choices:
+        - NA
         - Image processing was performed on some or all images
         - No image processing was performed
 
@@ -198,7 +275,12 @@ question18:
     id: Image.analysis
     mandatory: false
     bold: false
-
+    type: selectinput
+    multipleAllowed: false
+    choices:
+      - NA
+      - Yes
+      - No
 question19:
     title: Do authors address the availability of any images that were used to generate data?
     id: Raw.images
@@ -206,6 +288,7 @@ question19:
     bold: false
     multipleAllowed: false
     choices:
+        - NA
         - Raw images for some or all figures are deposited in a database or repository
         - Authors state that raw images for some or all data are available upon request
         - Authors do not address the availability of any images
